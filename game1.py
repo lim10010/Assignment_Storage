@@ -31,4 +31,4 @@ except ValueError:
 except Exception as e:
     print(f"예상치 못한 에러가 발생했습니다. error : {e}")
 
-"게임을 종료합니다. 감사합니다!"
+"게임을 종료합니다. 감사합니다"
