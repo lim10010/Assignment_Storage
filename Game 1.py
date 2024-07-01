@@ -3,7 +3,7 @@ import random
 
 print("10번만에 랜덤 숫자 맞추기 게임")
 
-random_number = random.randint(1,10) #랜덤 숫자 범위
+random_number = random.randint(1,100) #랜덤 숫자 범위
 try_number = 0 #시도횟수 초기세팅값
 max_try_number = 10 # 시도 최고횟수
 
