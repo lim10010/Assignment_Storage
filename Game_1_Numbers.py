@@ -1,5 +1,6 @@
-import random
+###### 숫자 맞추기 게임 ######
 
+import random
 
 print("10번만에 랜덤 숫자 맞추기 게임")
 

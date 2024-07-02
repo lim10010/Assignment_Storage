@@ -1,3 +1,5 @@
+###### 가위바위보 게임 ######
+
 from itertools import product
 import random
 
