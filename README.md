@@ -1,5 +1,7 @@
 # assignment_p
-Week2 personal assignment 1 &amp; 2
+Week2 personal assignment 1
+
+<Game 1>
 
 1. 프로젝트 목적
 
@@ -23,3 +25,25 @@ Week2 personal assignment 1 &amp; 2
 
 - git clone https://github.com/lim10010/assignment_p.git
 
+
+<Game 2>
+
+1. 프로젝트 목적
+
+본 프로젝트는 컴퓨터와 함께 가위바위보 게임을 하는 것입니다.
+
+2. 프로그램 설명
+컴퓨터가 랜덤으로 가위/바위/보 중에 하나를 생성한다.
+사용자는 입력창에 가위/바위/보 중에 하나를 입력한다.
+가위는 보를, 보는 주먹을, 주먹은 가위를 이기는 규칙 속에서 컴퓨터와 사용자의 선택을 비교 및 승패를 결정한다.
+원하는 횟수만큼 플레이할 수 있으며 매 플레이마다 컴퓨터는 다른 선택지를 생성한다.
+게임 종료시에는 지금까지의 전적 : 이긴 횟수 / 진 횟수 / 무승부 횟수 / 승률을 계산하여 출력한다.
+
+3. 요구사항
+
+- 운영체제 : 윈도우, Mac
+- 개발환경 : VSCode + Python 3.12 
+
+4. 설치방법
+
+- git clone https://github.com/lim10010/assignment_p.git
