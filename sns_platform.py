@@ -9,7 +9,7 @@ class Member:
         print('이름 :',self.name) 
         print('아이디 :',self.nusername)
     
-    # def append(self): 멤버스 리스트에 인스턴스를 넣는 방식을 찾아보고 있습니다ㅠㅠ
+    # def append(self): 멤버스 리스트에 인스턴스를 넣는 방식모르겠어요,,
 
 a = Member ('홍길동','hong','abc123')
 b = Member ('이순신','lee','abc123')
