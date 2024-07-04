@@ -26,7 +26,7 @@ c = Member ('박첨지','park','abc123')
 # members.append(a) 적용하면 되요
 a.display() # 메서드확인용
 
-
+# 1. members 리스트를 돌면서 회원들의 이름을 모두 프린트 해주세요.
 
 
 # TODO : 코드 구현이 필요합니다.
