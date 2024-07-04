@@ -1,15 +1,31 @@
-# ----- 코드 정의 ------
-class Member:
-    # TODO : 코드 구현이 필요합니다.
 
+class Member:
+    
+    def __init__(self,name,username,password):
+        
+        self.name = name
+        self.username = username
+        self.password = password
+        
+        return
+    
     def display(self):
-        # TODO : 코드 구현이 필요합니다.
+        
+        
+        
         pass
+
+a = Member("Many","lim10010","qwe123")
+
 
 
 class Post:
-    # TODO : 코드 구현이 필요합니다.
-    pass
+    
+    def __init__(self,title,content,username):
+        
+        self.title = title
+        self.content = content
+        self.username = username
 
 
 # ----- 코드 실행 ------
