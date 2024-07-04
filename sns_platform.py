@@ -18,15 +18,17 @@ class Post:
 members = []
 posts = []
 
-# append(self): 멤버스 리스트에 인스턴스를 넣는 방식모르겠어요,,
-a = Member ('홍길동','hong','abc123')
-b = Member ('이순신','lee','abc123')
-c = Member ('박첨지','park','abc123')
+members_1 = Member ('홍길동','hong','abc123')
+members_2 = Member ('이순신','lee','abc123')
+members_3 = Member ('박첨지','park','abc123')
 
-# members.append(a) 적용하면 되요
-a.display() # 메서드확인용
+members.append(members_1)
+members.append(members_2)
+members.append(members_3)
 
-# 1. members 리스트를 돌면서 회원들의 이름을 모두 프린트 해주세요.
+print(members) # members 리스트가 보이지는 않는 데 괜찮을까요?
 
+for Member in members:
+    print(Member.name) 
 
 # TODO : 코드 구현이 필요합니다.
