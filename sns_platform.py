@@ -1,4 +1,5 @@
 members = []
+posts = []
 
 class Member() :
     
@@ -9,7 +10,7 @@ class Member() :
         
     def display(self):
         print(f"▶ 유저이름: {self.name}")
-        print(f"   유저ID: {self.username}")
+        print(f"▶ 유저ID: {self.username}")
         
 
 def info_set():
@@ -20,7 +21,45 @@ def info_set():
     return Member(a,b,c)
 
 
-##### 회원가입 실행 #####
+
+class Post() : 
+    def __init__(self,title,content,username):
+        
+        self.title = title
+        self.content = content
+        self.author = username
+        
+    def display_post(self):
+        print(f"<제목: {self.title}>")
+        print(f"{self.content} by {self.author}")
+        
+
+
+def post_writing() :
+    while True: 
+        
+        while True:
+            id_check = str(input("아이디를 입력하세요: "))
+            if any(id.username == id_check for id in members):
+                break
+            else:
+                print(f"{id_check}는 존재하지 않는 아이디입니다. 다시 입력하세요.")
+                continue
+        
+        b = str(input("글 제목을 입력하세요: "))
+        c = str(input("글 내용을 입력하세요: "))
+        
+        result = Post(b, c, id_check)
+        posts.append(result)
+        
+        rewrite_option = str(input("더 작성하시겠습니까? : ")).lower()
+        if rewrite_option != 'y':
+            break
+        
+    return
+
+
+##### 회원가입 실행 및 출력 #####
 while True:
     sign_in = str(input("계정을 생성하시겠습니까?(Y/N) : ")).lower()
     if sign_in == 'y':
@@ -29,38 +68,12 @@ while True:
     else:
         print("회원가입을 종료합니다")
         break
+    
+for i in members:
+    i.display()
 
-print("-----현재까지 가입된 멤버의 정보입니다-----")
-for member in members:
-    member.display()
-
-
-
-class Post() : 
-    def __init__(self,title,content,Member):
-        
-        self.title = title
-        self.content = content
-        self.username = Member.username
-        
-    def display_post(self):
-        print(f"<제목: {self.title}>")
-        print(f"{self.content} by {self.username}")
-
-
-Many_post = Post("Many's word", "냉정과 열정 사이", Many)
-Tony_post = Post("Tony's word", "점프 투 파이썬", Tony)
-Kona_post = Post("Kona's word", "점심 메뉴를 고민중입니다", Kona)
-
-posts.append(Many_post)
-posts.append(Tony_post)
-posts.append(Kona_post)
+##### 게시글 작성 실행 및 출력 #####
+post_writing()
 
 for y in posts:
     y.display_post()
-
-
-
-
-
-
