@@ -1,29 +1,38 @@
 members = []
-posts = []
 
 class Member() :
+    
     def __init__(self,name,username,password):
-        
         self.name = name
         self.username = username
         self.password = password
         
     def display(self):
         print(f"▶ 유저이름: {self.name}")
-        print(f"▶ 유저ID: {self.username}")
+        print(f"   유저ID: {self.username}")
         
 
-Many = Member("Many","lim10010","qwe123")
-Tony = Member("Tony","Ton20020","qwe456")
-Kona = Member("Kona","Kon30030","qwe789")
+def info_set():
+    a = str(input("이름을 적으시오 : "))
+    b = str(input("원하는 아이디 입력하시오 : "))
+    c = str(input("원하는 비밀번호를 만드시오 : "))
+    
+    return Member(a,b,c)
 
-members.append(Many)
-members.append(Tony)
-members.append(Kona)
 
+##### 회원가입 실행 #####
+while True:
+    sign_in = str(input("계정을 생성하시겠습니까?(Y/N) : ")).lower()
+    if sign_in == 'y':
+        user_sign = info_set()
+        members.append(user_sign)
+    else:
+        print("회원가입을 종료합니다")
+        break
 
-for i in members:
-    i.display()
+print("-----현재까지 가입된 멤버의 정보입니다-----")
+for member in members:
+    member.display()
 
 
 
