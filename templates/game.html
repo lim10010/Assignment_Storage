@@ -31,28 +31,105 @@
             display: flex;
             justify-content: left;
             gap: 0px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* 텍스트 정렬을 위해 추가 */
+            width: fit-content;
+            /* 내용에 맞게 너비 조정 */
+            margin: 0 auto;
+            /* 박스 자체를 가운데 정렬 */
             /* 박스 사이의 간격 설정 */
         }
 
+        .result2-box {
+            border: 1px solid black;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* 텍스트 정렬을 위해 추가 */
+            width: fit-content;
+            /* 내용에 맞게 너비 조정 */
+            margin: 0 auto;
+            /* 박스 자체를 가운데 정렬 */
+        }
+
+        .reset_container {
+            text-align: center;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+
+        .choice-container {
+            text-align: center;
+            /* 텍스트 정렬을 위해 추가 */
+            width: fit-content;
+            /* 내용에 맞게 너비 조정 */
+            margin: 0 auto;
+            /* 박스 자체를 가운데 정렬 */
+        }
+
+        .choice-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .table {
+            text-align: center;
+        }
     </style>
 
 </head>
 
 <body>
 
-    <h1>가위바위보 게임</h1>
-    
-    <h3> 결과 통계 </h3>
-    <div style="border: 1px solid black; padding: 10px;"> 글이 잘 기록되나? </div>
+    <h1 align="center">가위바위보 게임</h1>
+
+    <div class="choice-container">
+        <form action="{{ url_for('home')}}" method="post">
+            <button type="submit" name="player_choice" value="가위" class="choice-button">가위</button>
+            <button type="submit" name="player_choice" value="바위" class="choice-button">바위</button>
+            <button type="submit" name="player_choice" value="보" class="choice-button">보</button>
+        </form>
+    </div>
+
+
+    <!-- 가위바위보 승부 출력 -->
+    <div class="result2-box"> (컴퓨터: {{report.com}}) vs (사용자: {{report.user}}) = 결과: {{report.result}}
+    </div>
+
+    <!-- 히스토리 초기화 -->
+    <div class="reset_container">
+        <form action="{{ url_for('reset_database') }}" method="post">
+            <button type="submit">데이터베이스 초기화</button>
+        </form>
+    </div>
+
+    <h3 align="center"> 결과 통계 </h3>
+
+    <!-- 승패기록 요약 출력 -->
     <div class="result-container">
         <div class="result-box">승: {{report.win}}</div>
         <div class="result-box">패: {{report.lost}}</div>
         <div class="result-box">무: {{report.same}}</div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
         </script>
 
+    <!-- 승패기록 표 출력 -->
     <table class="table">
         <thead>
             <tr>
