@@ -41,6 +41,27 @@
 <body>
 
     <h1>가위바위보 게임</h1>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">컴퓨터</th>
+                <th scope="col">사용자</th>
+                <th scope="col">결과</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for history in historys %}
+            <tr>
+                <th scope="row">{{ history.id }}</th>
+                <td>{{ history.com }}</td>
+                <td>{{ history.user }}</td>
+                <td>{{ history.result }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
 
     <h3> 결과 통계 </h3>
