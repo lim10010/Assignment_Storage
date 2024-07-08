@@ -37,12 +37,15 @@ class RockPaperSissor(db.Model):
 with app.app_context():
     db.create_all()
 
+RockPaperSissor.query.all()
+
 #################################################################
 ##################################################################
 
 @app.route("/")
 def home():
-
+    db_value = db.session.query(RockPaperSissor).all()
+    return render_template("game.html", historys=db_value)
 
     ####### 코드 작성 ############
 
