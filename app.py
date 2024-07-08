@@ -54,13 +54,13 @@ def home():
     lost = db.session.query(func.count(RockPaperSissor.result)).filter(RockPaperSissor.result == "패").scalar()
     same =  db.session.query(func.count(RockPaperSissor.result)).filter(RockPaperSissor.result == "무").scalar()
 
-    report = {
+    db_report = {
         "win": win,
         "lost":lost,
         "same":same,
     }
 
-    return render_template("game.html", data=report, historys=db_value)
+    return render_template("game.html", report=db_report, historys=db_value)
 
 
 if __name__ == '__main__':
