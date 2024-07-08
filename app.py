@@ -37,8 +37,6 @@ class RockPaperSissor(db.Model):
 with app.app_context():
     db.create_all()
 
-RockPaperSissor.query.all()
-
 #################################################################
 ##################################################################
 
